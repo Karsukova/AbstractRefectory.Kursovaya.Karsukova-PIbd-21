@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractRefectoryImplementList
+namespace AbstractRefectoryImplementList.Implementations
 {
-    public class Class1
+    class ProductServiceList
     {
     }
 }

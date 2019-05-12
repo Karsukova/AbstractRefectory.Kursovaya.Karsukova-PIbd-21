@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryServiceDAL.BindingModel
 {
-    public class FridgeBindingModel
+    class OrderListBindingModel
     {
-        public int Id { get; set; }
-        public string FridgeName { get; set; }
     }
 }

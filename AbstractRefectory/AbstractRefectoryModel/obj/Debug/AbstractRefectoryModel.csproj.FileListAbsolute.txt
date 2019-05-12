@@ -1,0 +1,6 @@
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\bin\Debug\AbstractRefectoryModel.dll
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\bin\Debug\AbstractRefectoryModel.pdb
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.csproj.CoreCompileInputs.cache
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.dll
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.pdb

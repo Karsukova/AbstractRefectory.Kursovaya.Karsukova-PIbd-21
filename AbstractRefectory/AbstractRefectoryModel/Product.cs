@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryModel
 {
-    public class Class1
+    public class Product
     {
+        public int Id { get; set; }
+        public string ProductName { get; set; }
+       
     }
 }

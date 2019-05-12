@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbstractRefectoryModel
+namespace AbstractRefectoryServiceDAL.ViewModel
 {
-    public class Fridge
+    public class AdminViewModel
     {
         public int Id { get; set; }
-        public string FridgeName { get; set; }
+        public string AdminFIO { get; set; }
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryServiceDAL.ViewModel
 {
-    class FridgeViewModel
+    public class FridgeViewModel
     {
+        public int Id { get; set; }
+        public string FridgeName { get; set; }
+        public List<FridgeProductViewModel> StorageMaterials { get; set; }
     }
 }

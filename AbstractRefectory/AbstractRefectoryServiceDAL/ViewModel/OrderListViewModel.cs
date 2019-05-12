@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryServiceDAL.ViewModel
 {
-    public class ProductViewModel
+    class OrderListViewModel
     {
-        public int Id { get; set; }
-        public string ProductName { get; set; }
     }
 }

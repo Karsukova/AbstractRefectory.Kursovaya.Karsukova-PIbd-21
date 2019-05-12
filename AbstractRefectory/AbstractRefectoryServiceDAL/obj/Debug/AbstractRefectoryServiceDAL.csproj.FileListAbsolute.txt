@@ -1,0 +1,2 @@
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csproj.CoreCompileInputs.cache
