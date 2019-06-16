@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryServiceDAL.BindingModel
 {
-    public class MaterialBindingModel
+    public class ProductBindingModel
     {
         public int Id { get; set; }
-        public string MaterialName { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+
     }
 }

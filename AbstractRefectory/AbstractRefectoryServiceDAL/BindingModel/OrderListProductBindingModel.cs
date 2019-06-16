@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryServiceDAL.BindingModel
 {
-    class OrderListProductBindingModel
+    public class OrderListProductBindingModel
     {
+        public int Id { get; set; }
+        public int OrderListId { get; set; }
+        public string ProductName { get; set; }
+        public decimal Price { get; set; }
+        public int ProductId { get; set; }
+        public int Count { get; set; }
     }
 }

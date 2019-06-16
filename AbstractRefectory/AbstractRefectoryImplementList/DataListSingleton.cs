@@ -15,10 +15,15 @@ namespace AbstractRefectoryImplementList
         public List<Order> Orders { get; set; }
         public List<Fridge> Fridges { get; set; }
         public List<FridgeProduct> FridgeProducts { get; set; }
+        public List<OrderList> OrderLists { get; set; }
+        public List<OrderListProduct> OrderListProducts { get; set; }
         private DataListSingleton()
         {
+            Admins = new List<Admin>();
             Products = new List<Product>();
             Orders = new List<Order>();
+            OrderLists = new List<OrderList>();
+            OrderListProducts = new List<OrderListProduct>();
             Fridges = new List<Fridge>();
             FridgeProducts = new List<FridgeProduct>();
         }

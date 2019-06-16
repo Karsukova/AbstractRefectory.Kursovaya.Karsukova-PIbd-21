@@ -10,7 +10,7 @@ namespace AbstractRefectoryServiceDAL.BindingModel
     {
         public int Id { get; set; }
         public int AdminId { get; set; }
-        public int ProductId { get; set; }
+        public int OrderListId { get; set; }
         public int Count { get; set; }
         public decimal Sum { get; set; }
     }

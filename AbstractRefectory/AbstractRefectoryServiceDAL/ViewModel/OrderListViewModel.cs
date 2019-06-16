@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AbstractRefectoryServiceDAL.ViewModel
 {
-    class OrderListViewModel
+    public class OrderListViewModel
     {
+        public int Id { get; set; }
+        public string OrderListName { get; set; }
+        public decimal Sum { get; set; }
+        public List<OrderListProductViewModel> OrderListProducts { get; set; }
     }
 }

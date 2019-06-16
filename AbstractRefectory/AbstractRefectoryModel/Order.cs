@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AbstractRefectoryModel
 {
@@ -10,11 +12,13 @@ namespace AbstractRefectoryModel
     {
         public int Id { get; set; }
         public int AdminId { get; set; }
-        public int ProductId { get; set; }
+        public int OrderListId { get; set; }
         public int Count { get; set; }
         public decimal Sum { get; set; }
         public OrderStatus Status { get; set; }
         public DateTime DateCreate { get; set; }
         public DateTime? DateImplement { get; set; }
+        public virtual Admin Admin { get; set; }
+        public virtual OrderList OrderList { get; set; }
     }
 }

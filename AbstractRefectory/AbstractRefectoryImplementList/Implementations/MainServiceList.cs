@@ -135,27 +135,27 @@ namespace AbstractRefectoryImplementList.Implementations
             element.Status = OrderStatus.Оплачен;
         }
 
-        public void PutComponentOnStorage(StorageMaterialBindingModel model)
+        public void PutProductToFridge(FridgeProductBindingModel model)
         {
-            StorageMaterial element = source.StorageMaterials.FirstOrDefault(rec =>
-rec.StorageId == model.StorageId && rec.MaterialId == model.MaterialId);
+            FridgeProduct element = source.FridgeProducts.FirstOrDefault(rec =>
+rec.FridgeId == model.FridgeId && rec.ProductId == model.ProductId);
             if (element != null)
             {
                 element.Count += model.Count;
             }
             else
             {
-                int maxId = source.StorageMaterials.Count > 0 ?
-               source.StorageMaterials.Max(rec => rec.Id) : 0;
-                source.StorageMaterials.Add(new StorageMaterial
+                int maxId = source.FridgeProducts.Count > 0 ?
+               source.FridgeProducts.Max(rec => rec.Id) : 0;
+                source.FridgeProducts.Add(new FridgeProduct
                 {
                     Id = ++maxId,
-                    StorageId = model.StorageId,
-                    MaterialId = model.MaterialId,
+                    FridgeId = model.FridgeId,
+                    ProductId = model.ProductId,
                     Count = model.Count
                 });
             }
         }
     }
 }
-}
+

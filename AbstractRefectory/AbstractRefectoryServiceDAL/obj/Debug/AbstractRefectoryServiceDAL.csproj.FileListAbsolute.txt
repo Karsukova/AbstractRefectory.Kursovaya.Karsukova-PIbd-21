@@ -1,2 +1,11 @@
-C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csprojResolveAssemblyReference.cache
 C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csproj.CoreCompileInputs.cache
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryServiceDAL.dll
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryServiceDAL.pdb
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.dll
+C:\Users\Дарья\Desktop\учеба\ТП\Курсовая\Git\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.pdb
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryServiceDAL.dll
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryServiceDAL.pdb
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csproj.CoreCompileInputs.cache
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.dll
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.pdb
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csprojResolveAssemblyReference.cache

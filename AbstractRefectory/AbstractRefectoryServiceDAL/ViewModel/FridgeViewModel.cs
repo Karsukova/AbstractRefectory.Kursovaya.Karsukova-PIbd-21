@@ -10,6 +10,6 @@ namespace AbstractRefectoryServiceDAL.ViewModel
     {
         public int Id { get; set; }
         public string FridgeName { get; set; }
-        public List<FridgeProductViewModel> StorageMaterials { get; set; }
+        public List<FridgeProductViewModel> FridgeProducts { get; set; }
     }
 }
