@@ -88,17 +88,12 @@
     <Compile Include="Implementations\AdminServiceDB.cs" />
     <Compile Include="Implementations\FridgeServiceDB.cs" />
     <Compile Include="Implementations\MainServiceDB.cs" />
-    <Compile Include="Implementations\OrderListProductSeviceDB.cs" />
     <Compile Include="Implementations\OrderListServiceDB.cs" />
     <Compile Include="Implementations\ProductServiceDB.cs" />
     <Compile Include="Implementations\ReptServiceDB.cs" />
-    <Compile Include="Migrations\201905312332173_FirstMigration.cs" />
-    <Compile Include="Migrations\201905312332173_FirstMigration.Designer.cs">
-      <DependentUpon>201905312332173_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906010015018_SecondMigration.cs" />
-    <Compile Include="Migrations\201906010015018_SecondMigration.Designer.cs">
-      <DependentUpon>201906010015018_SecondMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201906170628100_FirstMigration.cs" />
+    <Compile Include="Migrations\201906170628100_FirstMigration.Designer.cs">
+      <DependentUpon>201906170628100_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,11 +135,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905312332173_FirstMigration.resx">
-      <DependentUpon>201905312332173_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906010015018_SecondMigration.resx">
-      <DependentUpon>201906010015018_SecondMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906170628100_FirstMigration.resx">
+      <DependentUpon>201906170628100_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

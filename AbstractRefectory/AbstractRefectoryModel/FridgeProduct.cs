@@ -13,7 +13,12 @@ namespace AbstractRefectoryModel
         public int Id { get; set; }
         public int FridgeId { get; set; }
         public int ProductId { get; set; }
+        public string ProductName { get; set; }
         public int Count { get; set; }
+        public DateTime ReceiptDate { get; set; }
+        public int FreshDate { get; set; }
+        public FreshStatus FreshStatus { get; set; }
+        public DateTime? DateNotFresh { get; set; }
         public virtual Product Product { get; set; }
         public virtual Fridge Fridge { get; set; }
     }

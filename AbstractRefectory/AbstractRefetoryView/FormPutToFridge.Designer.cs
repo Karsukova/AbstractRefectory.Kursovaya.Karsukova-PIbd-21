@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBoxStorage = new System.Windows.Forms.ComboBox();
-            this.comboBoxMaterial = new System.Windows.Forms.ComboBox();
+            this.comboBoxFridge = new System.Windows.Forms.ComboBox();
+            this.comboBoxProduct = new System.Windows.Forms.ComboBox();
             this.textBoxCount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,25 +38,25 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBoxStorage
+            // comboBoxFridge
             // 
-            this.comboBoxStorage.FormattingEnabled = true;
-            this.comboBoxStorage.Location = new System.Drawing.Point(124, 23);
-            this.comboBoxStorage.Name = "comboBoxStorage";
-            this.comboBoxStorage.Size = new System.Drawing.Size(422, 28);
-            this.comboBoxStorage.TabIndex = 0;
+            this.comboBoxFridge.FormattingEnabled = true;
+            this.comboBoxFridge.Location = new System.Drawing.Point(168, 23);
+            this.comboBoxFridge.Name = "comboBoxFridge";
+            this.comboBoxFridge.Size = new System.Drawing.Size(422, 28);
+            this.comboBoxFridge.TabIndex = 0;
             // 
-            // comboBoxMaterial
+            // comboBoxProduct
             // 
-            this.comboBoxMaterial.FormattingEnabled = true;
-            this.comboBoxMaterial.Location = new System.Drawing.Point(124, 81);
-            this.comboBoxMaterial.Name = "comboBoxMaterial";
-            this.comboBoxMaterial.Size = new System.Drawing.Size(422, 28);
-            this.comboBoxMaterial.TabIndex = 1;
+            this.comboBoxProduct.FormattingEnabled = true;
+            this.comboBoxProduct.Location = new System.Drawing.Point(168, 78);
+            this.comboBoxProduct.Name = "comboBoxProduct";
+            this.comboBoxProduct.Size = new System.Drawing.Size(422, 28);
+            this.comboBoxProduct.TabIndex = 1;
             // 
             // textBoxCount
             // 
-            this.textBoxCount.Location = new System.Drawing.Point(124, 136);
+            this.textBoxCount.Location = new System.Drawing.Point(168, 133);
             this.textBoxCount.Name = "textBoxCount";
             this.textBoxCount.Size = new System.Drawing.Size(422, 26);
             this.textBoxCount.TabIndex = 2;
@@ -66,18 +66,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Склад:";
+            this.label1.Text = "Холодильник:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(14, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.Size = new System.Drawing.Size(78, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Материал:";
+            this.label2.Text = "Продукт:";
             // 
             // label3
             // 
@@ -90,7 +90,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(405, 204);
+            this.buttonCancel.Location = new System.Drawing.Point(438, 189);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(141, 39);
             this.buttonCancel.TabIndex = 7;
@@ -100,7 +100,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(236, 204);
+            this.buttonSave.Location = new System.Drawing.Point(259, 189);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(146, 39);
             this.buttonSave.TabIndex = 6;
@@ -112,15 +112,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 277);
+            this.ClientSize = new System.Drawing.Size(616, 245);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxCount);
-            this.Controls.Add(this.comboBoxMaterial);
-            this.Controls.Add(this.comboBoxStorage);
+            this.Controls.Add(this.comboBoxProduct);
+            this.Controls.Add(this.comboBoxFridge);
             this.Name = "FormPutToFridge";
             this.Text = "Пополнение холодильника";
             this.Load += new System.EventHandler(this.FormPutToFridge_Load);
@@ -131,8 +131,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBoxStorage;
-        private System.Windows.Forms.ComboBox comboBoxMaterial;
+        private System.Windows.Forms.ComboBox comboBoxFridge;
+        private System.Windows.Forms.ComboBox comboBoxProduct;
         private System.Windows.Forms.TextBox textBoxCount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

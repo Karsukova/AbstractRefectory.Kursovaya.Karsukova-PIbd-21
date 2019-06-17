@@ -17,23 +17,24 @@ namespace DB.Implementations
         }
         public List<OrderListViewModel> GetList()
         {
-            List<OrderListViewModel> result = context.OrderLists.Select(rec => new
-           OrderListViewModel
+            List<OrderListViewModel> result = context.OrderLists.Select(rec =>
+            new OrderListViewModel
             {
                 Id = rec.Id,
                 OrderListName = rec.OrderListName,
                 Sum = rec.Sum,
                 OrderListProducts = context.OrderListProducts
-                .Where(recPC => recPC.OrderListId == rec.Id)
-                .Select(recPC => new OrderListProductViewModel
-                {
-                    Id = recPC.Id,
-                    OrderListId = recPC.OrderListId,
-                    Price = recPC.Price,
-                    ProductId = recPC.ProductId,
-                    ProductName = recPC.ProductName,
-                    Count = recPC.Count
-                })
+            .Where(recPC => recPC.OrderListId == rec.Id)
+           .Select(recPC => new OrderListProductViewModel
+           {
+               Id = recPC.Id,
+               OrderListId = recPC.OrderListId,
+               ProductId = recPC.ProductId,
+               ProductName = recPC.Product.ProductName,
+               Count = recPC.Count,
+               Sum = recPC.Count * recPC.Product.Price,
+               Price = recPC.Product.Price
+           })
            .ToList()
             })
             .ToList();
@@ -45,23 +46,22 @@ namespace DB.Implementations
             if (element != null)
             {
                 return new OrderListViewModel
-
                 {
                     Id = element.Id,
                     OrderListName = element.OrderListName,
                     Sum = element.Sum,
-                    OrderListProducts = context.OrderListProducts
-                    .Where(recPC => recPC.OrderListId == element.Id)
+                    OrderListProducts = context.OrderListProducts.Where(recPC => recPC.OrderListId == element.Id)
                     .Select(recPC => new OrderListProductViewModel
                     {
                         Id = recPC.Id,
                         OrderListId = recPC.OrderListId,
-                        Price = recPC.Price,
                         ProductId = recPC.ProductId,
-                        ProductName = recPC.ProductName,
-                        Count = recPC.Count
+                        ProductName = recPC.Product.ProductName,
+                        Count = recPC.Count,
+                        Sum = recPC.Product.Price * recPC.Count,
+                        Price = recPC.Product.Price 
                     })
-    .ToList()
+                    .ToList()
                 };
             }
             throw new Exception("Элемент не найден");
@@ -76,31 +76,32 @@ namespace DB.Implementations
                    rec.OrderListName == model.OrderListName);
                     if (element != null)
                     {
-                        throw new Exception("Уже есть изделие с таким названием");
+                        throw new Exception("Уже есть список с таким названием");
                     }
                     element = new OrderList
                     {
                         OrderListName = model.OrderListName,
-                        Sum = model.Sum
+                        Sum = model.Sum,
+
                     };
                     context.OrderLists.Add(element);
                     context.SaveChanges();
                     // убираем дубли по компонентам
-                    var groupComponents = model.OrderListProducts
+                    var groupProducts = model.OrderListProducts
                      .GroupBy(rec => rec.ProductId)
                     .Select(rec => new
                     {
-                        ComponentId = rec.Key,
+                        ProductId = rec.Key,
                         Count = rec.Sum(r => r.Count)
                     });
                     // добавляем компоненты
-                    foreach (var groupComponent in groupComponents)
+                    foreach (var groupProduct in groupProducts)
                     {
                         context.OrderListProducts.Add(new OrderListProduct
                         {
                             OrderListId = element.Id,
-                            ProductId = groupComponent.ComponentId,
-                            Count = groupComponent.Count
+                            ProductId = groupProduct.ProductId,
+                            Count = groupProduct.Count
                         });
                         context.SaveChanges();
                     }
@@ -110,7 +111,6 @@ namespace DB.Implementations
                 {
                     transaction.Rollback();
                     throw;
-
                 }
             }
         }
@@ -137,34 +137,34 @@ namespace DB.Implementations
                     // обновляем существуюущие компоненты
                     var compIds = model.OrderListProducts.Select(rec =>
                    rec.ProductId).Distinct();
-                    var updateComponents = context.OrderListProducts.Where(rec =>
-                   rec.OrderListId == model.Id && compIds.Contains(rec.ProductId));
-                    foreach (var updateMaterial in updateComponents)
+                    var updateProducts = context.OrderListProducts.Where(rec =>
+                   rec.ProductId == model.Id && compIds.Contains(rec.ProductId));
+                    foreach (var updateProduct in updateProducts)
                     {
-                        updateMaterial.Count =
-                       model.OrderListProducts.FirstOrDefault(rec => rec.Id == updateMaterial.Id).Count;
+                        updateProduct.Count =
+                       model.OrderListProducts.FirstOrDefault(rec => rec.Id == updateProduct.Id).Count;
                     }
                     context.SaveChanges();
                     context.OrderListProducts.RemoveRange(context.OrderListProducts.Where(rec =>
-                    rec.OrderListId == model.Id && !compIds.Contains(rec.OrderListId)));
+                    rec.OrderListId == model.Id && !compIds.Contains(rec.ProductId)));
                     context.SaveChanges();
                     // новые записи
-                    var groupMaterials = model.OrderListProducts
+                    var groupProducts = model.OrderListProducts
                     .Where(rec => rec.Id == 0)
                    .GroupBy(rec => rec.ProductId)
                    .Select(rec => new
                    {
-                       ComponentId = rec.Key,
+                       ProductId = rec.Key,
                        Count = rec.Sum(r => r.Count)
                    });
-                    foreach (var groupComponent in groupMaterials)
+                    foreach (var groupProduct in groupProducts)
                     {
                         OrderListProduct elementPC =
                        context.OrderListProducts.FirstOrDefault(rec => rec.OrderListId == model.Id &&
-                       rec.OrderListId == groupComponent.ComponentId);
+                       rec.ProductId == groupProduct.ProductId);
                         if (elementPC != null)
                         {
-                            elementPC.Count += groupComponent.Count;
+                            elementPC.Count += groupProduct.Count;
                             context.SaveChanges();
                         }
                         else
@@ -172,9 +172,8 @@ namespace DB.Implementations
                             context.OrderListProducts.Add(new OrderListProduct
                             {
                                 OrderListId = model.Id,
-                              
-                                ProductId = groupComponent.ComponentId,
-                                Count = groupComponent.Count
+                                ProductId = groupProduct.ProductId,
+                                Count = groupProduct.Count
                             });
                             context.SaveChanges();
                         }
@@ -218,4 +217,4 @@ namespace DB.Implementations
             }
         }
     }
-}
+}

@@ -34,28 +34,30 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.Стоимость = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxDateFreshment = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBoxMaterial
             // 
-            this.textBoxMaterial.Location = new System.Drawing.Point(287, 12);
+            this.textBoxMaterial.Location = new System.Drawing.Point(193, 9);
             this.textBoxMaterial.Multiline = true;
             this.textBoxMaterial.Name = "textBoxMaterial";
-            this.textBoxMaterial.Size = new System.Drawing.Size(381, 30);
+            this.textBoxMaterial.Size = new System.Drawing.Size(381, 33);
             this.textBoxMaterial.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 15);
+            this.label1.Location = new System.Drawing.Point(30, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Наименование ";
+            this.label1.Text = "Наименование:";
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(368, 140);
+            this.buttonSave.Location = new System.Drawing.Point(255, 173);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(146, 39);
             this.buttonSave.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(527, 140);
+            this.buttonCancel.Location = new System.Drawing.Point(433, 173);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(141, 39);
             this.buttonCancel.TabIndex = 3;
@@ -74,7 +76,7 @@
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(287, 76);
+            this.textBoxPrice.Location = new System.Drawing.Point(193, 59);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(381, 26);
             this.textBoxPrice.TabIndex = 4;
@@ -82,17 +84,35 @@
             // Стоимость
             // 
             this.Стоимость.AutoSize = true;
-            this.Стоимость.Location = new System.Drawing.Point(157, 79);
+            this.Стоимость.Location = new System.Drawing.Point(30, 62);
             this.Стоимость.Name = "Стоимость";
-            this.Стоимость.Size = new System.Drawing.Size(93, 20);
+            this.Стоимость.Size = new System.Drawing.Size(97, 20);
             this.Стоимость.TabIndex = 5;
-            this.Стоимость.Text = "Стоимость";
+            this.Стоимость.Text = "Стоимость:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Срок годности:";
+            // 
+            // textBoxDateFreshment
+            // 
+            this.textBoxDateFreshment.Location = new System.Drawing.Point(193, 109);
+            this.textBoxDateFreshment.Name = "textBoxDateFreshment";
+            this.textBoxDateFreshment.Size = new System.Drawing.Size(381, 26);
+            this.textBoxDateFreshment.TabIndex = 7;
             // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 200);
+            this.ClientSize = new System.Drawing.Size(600, 237);
+            this.Controls.Add(this.textBoxDateFreshment);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Стоимость);
             this.Controls.Add(this.textBoxPrice);
             this.Controls.Add(this.buttonCancel);
@@ -114,5 +134,7 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label Стоимость;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxDateFreshment;
     }
 }

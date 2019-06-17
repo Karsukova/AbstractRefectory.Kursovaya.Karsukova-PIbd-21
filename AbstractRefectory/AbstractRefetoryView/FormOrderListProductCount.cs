@@ -22,7 +22,6 @@ namespace AbstractRefetoryView
                 return model;
             }
         }
-        private readonly IOrderListProductService serviceO;
         private readonly IProductService serviceP;
 
         private OrderListProductViewModel model;
@@ -30,7 +29,6 @@ namespace AbstractRefetoryView
         {
             InitializeComponent();
             this.serviceP = serviceP;
-            this.serviceO = serviceO;
         }
         private void FormOrderListProduct_Load(object sender, EventArgs e)
         {
@@ -57,30 +55,7 @@ namespace AbstractRefetoryView
                 textBoxCount.Text = model.Count.ToString();
             }
         }
-        private decimal CalcSum()
-        {
-            if (comboBoxProduct.SelectedValue != null &&
-           !string.IsNullOrEmpty(textBoxCount.Text))
-            {
-                try
-                {
-                    int id = Convert.ToInt32(comboBoxProduct.SelectedValue);
-                    OrderListProductViewModel product = serviceO.GetElement(id);
-                    int count = Convert.ToInt32(textBoxCount.Text);
-                    textBoxPrice.Text = (count * product.Price).ToString();
-                    return count * product.Price;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-                   MessageBoxIcon.Error);
-                    return 0;
-                }
-                return 0;
-            }
-            return 0;
-            
-        }
+        
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxCount.Text))
@@ -100,12 +75,14 @@ namespace AbstractRefetoryView
                 if (model == null)
 
                 {
+
                     model = new OrderListProductViewModel
                     {
                         ProductId = Convert.ToInt32(comboBoxProduct.SelectedValue),
                         ProductName = comboBoxProduct.Text,
-                        Price = CalcSum(),
-                        Count = Convert.ToInt32(textBoxCount.Text)
+                        Count = Convert.ToInt32(textBoxCount.Text),
+                        Price = Convert.ToDecimal(textBoxPrice.Text),
+                        Sum = Convert.ToDecimal(textBoxSum.Text)
 
                     };
                 }
@@ -130,6 +107,35 @@ namespace AbstractRefetoryView
             Close();
         }
 
-        
+        private void CalcSum()
+        {
+            if (comboBoxProduct.SelectedValue != null &&
+           !string.IsNullOrEmpty(textBoxCount.Text))
+            {
+                try
+                {
+                    int id = Convert.ToInt32(comboBoxProduct.SelectedValue);
+                    ProductViewModel product = serviceP.GetElement(id);
+                    int count = Convert.ToInt32(textBoxCount.Text);
+                    textBoxSum.Text = (count * product.Price).ToString();
+                    textBoxPrice.Text = product.Price.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void textBoxCount_TextChanged(object sender, EventArgs e)
+        {
+            CalcSum();
+        }
+        private void comboBoxProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcSum();
+        }
+
+       
     }
 }

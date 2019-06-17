@@ -28,7 +28,7 @@ namespace AbstractRefetoryView
         }
 
 
-        private void FormMaterial_Load(object sender, EventArgs e)
+        private void FormProduct_Load(object sender, EventArgs e)
         {
 
             if (id.HasValue)
@@ -40,6 +40,8 @@ namespace AbstractRefetoryView
                     {
                         textBoxMaterial.Text = view.ProductName;
                         textBoxPrice.Text = view.Price.ToString();
+                        textBoxDateFreshment.Text = view.FreshDate.ToString();
+
                     }
                 }
                 catch (Exception ex)
@@ -67,7 +69,9 @@ namespace AbstractRefetoryView
                     {
                         Id = id.Value,
                         ProductName = textBoxMaterial.Text,
-                        Price = Convert.ToDecimal(textBoxPrice.Text)
+                        Price = Convert.ToDecimal(textBoxPrice.Text),
+                        FreshDate = Convert.ToInt32(textBoxDateFreshment.Text)
+                        
                     });
                 }
                 else
@@ -75,7 +79,9 @@ namespace AbstractRefetoryView
                     service.AddElement(new ProductBindingModel
                     {
                         ProductName = textBoxMaterial.Text,
-                         Price = Convert.ToDecimal(textBoxPrice.Text)
+                         Price = Convert.ToDecimal(textBoxPrice.Text),
+                        FreshDate = Convert.ToInt32(textBoxDateFreshment.Text)
+
                     });
                 }
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
@@ -94,5 +100,20 @@ namespace AbstractRefetoryView
             DialogResult = DialogResult.Cancel;
             Close();
         }
+        //public FreshStatus CheckStatus(ProductBindingModel element)
+        //{
+        //    TimeSpan span = DateTime.Now - element.ReceiptDate;
+        //    int relative = span.Days;
+        //    if (relative <= element.FreshDate / 3)
+        //    {
+        //        return FreshStatus.Свежайший;
+        //    }
+        //    else if (relative > element.FreshDate * (2 / 3))
+        //    {
+        //        return FreshStatus.Истекает;
+        //    }
+        //    else
+        //        return FreshStatus.Нормальный;
+        //}
     }
 }

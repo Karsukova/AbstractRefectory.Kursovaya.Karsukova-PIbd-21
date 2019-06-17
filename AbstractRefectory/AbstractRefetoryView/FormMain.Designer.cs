@@ -37,7 +37,6 @@
             this.холодильникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пополнитьХолодильникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            //this.прайсИзделийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загруженностьСкладовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заказыКлиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -114,19 +113,11 @@
             // отчётыToolStripMenuItem
             // 
             this.отчётыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            //this.прайсИзделийToolStripMenuItem,
             this.загруженностьСкладовToolStripMenuItem,
             this.заказыКлиентовToolStripMenuItem});
             this.отчётыToolStripMenuItem.Name = "отчётыToolStripMenuItem";
             this.отчётыToolStripMenuItem.Size = new System.Drawing.Size(84, 29);
             this.отчётыToolStripMenuItem.Text = "Отчёты";
-            // 
-            // прайсИзделийToolStripMenuItem
-            //// 
-            //this.прайсИзделийToolStripMenuItem.Name = "прайсИзделийToolStripMenuItem";
-            //this.прайсИзделийToolStripMenuItem.Size = new System.Drawing.Size(290, 30);
-            //this.прайсИзделийToolStripMenuItem.Text = "Прайс изделий";
-            //this.прайсИзделийToolStripMenuItem.Click += new System.EventHandler(this.прайсИзделийToolStripMenuItem_Click);
             // 
             // загруженностьСкладовToolStripMenuItem
             // 
@@ -201,10 +192,6 @@
             this.button4.Text = "Обновить список";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.buttonRef_Click);
-            // 
-            // adminOrdersViewModelBindingSource
-            // 
-            this.adminOrdersViewModelBindingSource.DataSource = typeof(AbstractRefectoryServiceDAL.ViewModel.AdminOrdersViewModel);
             // 
             // FormMain
             // 

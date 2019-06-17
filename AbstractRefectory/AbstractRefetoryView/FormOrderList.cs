@@ -23,6 +23,28 @@ namespace AbstractRefetoryView
             this.service = service;
         }
 
+        private void LoadData()
+        {
+            try
+            {
+                if (orderlistProducts != null)
+                {
+                    dataGridView.DataSource = null;
+                    dataGridView.DataSource = orderlistProducts;
+                    dataGridView.Columns[0].Visible = false;
+                    dataGridView.Columns[1].Visible = false;
+                    dataGridView.Columns[2].Visible = false;
+                    dataGridView.Columns[3].AutoSizeMode =
+                    DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+               MessageBoxIcon.Error);
+            }
+        }
+
         private void FormOrderList_Load(object sender, EventArgs e)
         {
             if (id.HasValue)
@@ -49,28 +71,6 @@ namespace AbstractRefetoryView
                 orderlistProducts = new List<OrderListProductViewModel>();
             }
         }
-
-        private void LoadData()
-        {
-            try
-            {
-                if (orderlistProducts != null)
-                {
-                    dataGridView.DataSource = null;
-                    dataGridView.DataSource = orderlistProducts;
-                    dataGridView.Columns[0].Visible = false;
-                    dataGridView.Columns[1].Visible = false;
-                    dataGridView.Columns[2].Visible = false;
-                    dataGridView.Columns[3].AutoSizeMode =
-                    DataGridViewAutoSizeColumnMode.Fill;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-               MessageBoxIcon.Error);
-            }
-        }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormOrderListProductCount>();
@@ -85,11 +85,11 @@ namespace AbstractRefetoryView
                     orderlistProducts.Add(form.Model);
                 }
                 LoadData();
-                CalcSum();
             }
         }
         private void buttonUpd_Click(object sender, EventArgs e)
         {
+            CalcSum();
             if (dataGridView.SelectedRows.Count == 1)
             {
                 var form = Container.Resolve<FormOrderListProductCount>();
@@ -103,6 +103,7 @@ namespace AbstractRefetoryView
                     CalcSum();
                 }
             }
+            
         }
         private void buttonDel_Click(object sender, EventArgs e)
         {
@@ -139,7 +140,7 @@ namespace AbstractRefetoryView
             }
             if (string.IsNullOrEmpty(textBoxPrice.Text))
             {
-                MessageBox.Show("Заполните цену", "Ошибка", MessageBoxButtons.OK,
+                MessageBox.Show("Не указана стоимость закупки", "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
                 return;
             }
@@ -160,8 +161,10 @@ namespace AbstractRefetoryView
                         Id = orderlistProducts[i].Id,
                         OrderListId = orderlistProducts[i].OrderListId,
                         Price = orderlistProducts[i].Price,
+                        ProductName = orderlistProducts[i].ProductName,
                         ProductId = orderlistProducts[i].ProductId,
-                        Count = orderlistProducts[i].Count
+                        Count = orderlistProducts[i].Count,
+                        Sum = orderlistProducts[i].Sum
                     });
                 }
                 if (id.HasValue)
@@ -170,7 +173,7 @@ namespace AbstractRefetoryView
                     {
                         Id = id.Value,
                         OrderListName = textBoxName.Text,
-                        Sum = Convert.ToInt32(textBoxPrice.Text),
+                        Sum = Convert.ToDecimal(textBoxPrice.Text),
                         OrderListProducts = orderlistProductBM
                     });
                 }
@@ -180,7 +183,7 @@ namespace AbstractRefetoryView
                     service.AddElement(new OrderListBindingModel
                     {
                         OrderListName = textBoxName.Text,
-                        Sum = Convert.ToInt32(textBoxPrice.Text),
+                        Sum = Convert.ToDecimal(textBoxPrice.Text),
                         OrderListProducts = orderlistProductBM
                     });
                 }
@@ -198,12 +201,12 @@ namespace AbstractRefetoryView
 
         private void CalcSum()
         {
-            decimal sum = 0;
-           
+            decimal? sum = 0;
+
             for (int i = 0; i < orderlistProducts.Count; ++i)
             {
 
-                sum += orderlistProducts[i].Price;
+                sum += orderlistProducts[i].Sum;
             }
             textBoxPrice.Text = sum.ToString();
         }

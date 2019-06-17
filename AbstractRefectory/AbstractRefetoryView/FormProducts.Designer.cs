@@ -44,12 +44,12 @@
             this.dataGridView.Location = new System.Drawing.Point(25, 28);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(533, 621);
+            this.dataGridView.Size = new System.Drawing.Size(627, 621);
             this.dataGridView.TabIndex = 0;
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(603, 267);
+            this.buttonUpdate.Location = new System.Drawing.Point(713, 258);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(171, 41);
             this.buttonUpdate.TabIndex = 8;
@@ -59,7 +59,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(600, 199);
+            this.buttonDelete.Location = new System.Drawing.Point(713, 171);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 42);
             this.buttonDelete.TabIndex = 7;
@@ -69,7 +69,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(598, 128);
+            this.buttonChange.Location = new System.Drawing.Point(713, 95);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(176, 39);
             this.buttonChange.TabIndex = 6;
@@ -79,7 +79,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(598, 56);
+            this.buttonAdd.Location = new System.Drawing.Point(713, 28);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(176, 39);
             this.buttonAdd.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 683);
+            this.ClientSize = new System.Drawing.Size(901, 683);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonChange);

@@ -52,6 +52,8 @@ namespace DB.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         OrderListId = c.Int(nullable: false),
                         ProductName = c.String(),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Sum = c.Decimal(precision: 18, scale: 2),
                         ProductId = c.Int(nullable: false),
                         Count = c.Int(nullable: false),
                     })
@@ -68,6 +70,7 @@ namespace DB.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         ProductName = c.String(nullable: false),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        FreshDate = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -78,7 +81,12 @@ namespace DB.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         FridgeId = c.Int(nullable: false),
                         ProductId = c.Int(nullable: false),
+                        ProductName = c.String(),
                         Count = c.Int(nullable: false),
+                        ReceiptDate = c.DateTime(nullable: false),
+                        FreshDate = c.Int(nullable: false),
+                        FreshStatus = c.Int(nullable: false),
+                        DateNotFresh = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Fridges", t => t.FridgeId, cascadeDelete: true)

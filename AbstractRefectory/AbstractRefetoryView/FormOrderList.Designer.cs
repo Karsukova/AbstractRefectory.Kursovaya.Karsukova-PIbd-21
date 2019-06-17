@@ -51,16 +51,16 @@
             this.groupBox1.Controls.Add(this.buttonChange);
             this.groupBox1.Controls.Add(this.buttonAdd);
             this.groupBox1.Controls.Add(this.dataGridView);
-            this.groupBox1.Location = new System.Drawing.Point(76, 168);
+            this.groupBox1.Location = new System.Drawing.Point(36, 95);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(582, 377);
+            this.groupBox1.Size = new System.Drawing.Size(878, 377);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Материалы";
+            this.groupBox1.Text = "Продукты";
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(438, 241);
+            this.buttonUpdate.Location = new System.Drawing.Point(735, 259);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(121, 42);
             this.buttonUpdate.TabIndex = 4;
@@ -70,7 +70,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(437, 169);
+            this.buttonDelete.Location = new System.Drawing.Point(737, 177);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(119, 45);
             this.buttonDelete.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // buttonChange
             // 
-            this.buttonChange.Location = new System.Drawing.Point(437, 104);
+            this.buttonChange.Location = new System.Drawing.Point(737, 101);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(120, 43);
             this.buttonChange.TabIndex = 2;
@@ -90,7 +90,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(437, 40);
+            this.buttonAdd.Location = new System.Drawing.Point(737, 40);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(122, 39);
             this.buttonAdd.TabIndex = 1;
@@ -103,10 +103,10 @@
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView.Location = new System.Drawing.Point(28, 40);
+            this.dataGridView.Location = new System.Drawing.Point(25, 25);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(364, 321);
+            this.dataGridView.Size = new System.Drawing.Size(663, 321);
             this.dataGridView.TabIndex = 0;
             // 
             // textBoxName
@@ -114,7 +114,7 @@
             this.textBoxName.Location = new System.Drawing.Point(167, 29);
             this.textBoxName.Multiline = true;
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(439, 44);
+            this.textBoxName.Size = new System.Drawing.Size(439, 38);
             this.textBoxName.TabIndex = 1;
             // 
             // label1
@@ -129,10 +129,10 @@
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(167, 91);
+            this.textBoxPrice.Location = new System.Drawing.Point(655, 489);
             this.textBoxPrice.Multiline = true;
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(439, 44);
+            this.textBoxPrice.Size = new System.Drawing.Size(259, 25);
             this.textBoxPrice.TabIndex = 3;
             // 
             // label2
@@ -140,15 +140,15 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(58, 91);
+            this.label2.Location = new System.Drawing.Point(494, 489);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.Size = new System.Drawing.Size(151, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Цена:";
+            this.label2.Text = "Сумма заказа:";
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(317, 555);
+            this.buttonSave.Location = new System.Drawing.Point(499, 540);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(194, 33);
             this.buttonSave.TabIndex = 5;
@@ -158,7 +158,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(540, 555);
+            this.buttonCancel.Location = new System.Drawing.Point(720, 540);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(194, 33);
             this.buttonCancel.TabIndex = 6;
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 600);
+            this.ClientSize = new System.Drawing.Size(933, 585);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label2);

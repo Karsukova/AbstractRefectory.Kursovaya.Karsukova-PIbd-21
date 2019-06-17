@@ -9,3 +9,6 @@ C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\Abst
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.dll
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.pdb
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\obj\Debug\AbstractRefectoryServiceDAL.csprojResolveAssemblyReference.cache
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryModel.dll
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryModel.pdb
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryServiceDAL\bin\Debug\AbstractRefectoryModel.dll.config

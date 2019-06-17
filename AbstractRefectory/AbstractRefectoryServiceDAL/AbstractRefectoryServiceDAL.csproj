@@ -66,6 +66,11 @@
     <Compile Include="ViewModel\OrderViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AbstractRefectoryModel\AbstractRefectoryModel.csproj">
+      <Project>{2d1fdef6-f6da-4f34-8a49-53bdb7a42da3}</Project>
+      <Name>AbstractRefectoryModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

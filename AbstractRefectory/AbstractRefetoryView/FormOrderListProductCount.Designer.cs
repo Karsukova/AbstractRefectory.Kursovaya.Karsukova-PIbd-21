@@ -34,17 +34,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.textBoxSum = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // comboBoxProduct
             // 
             this.comboBoxProduct.FormattingEnabled = true;
-            this.comboBoxProduct.Location = new System.Drawing.Point(192, 25);
+            this.comboBoxProduct.Location = new System.Drawing.Point(196, 25);
             this.comboBoxProduct.Name = "comboBoxProduct";
-            this.comboBoxProduct.Size = new System.Drawing.Size(328, 28);
+            this.comboBoxProduct.Size = new System.Drawing.Size(323, 28);
             this.comboBoxProduct.TabIndex = 0;
+            this.comboBoxProduct.SelectedIndexChanged += new System.EventHandler(this.comboBoxProduct_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -61,11 +64,12 @@
             this.textBoxCount.Name = "textBoxCount";
             this.textBoxCount.Size = new System.Drawing.Size(323, 26);
             this.textBoxCount.TabIndex = 2;
+            this.textBoxCount.TextChanged += new System.EventHandler(this.textBoxCount_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 87);
+            this.label2.Location = new System.Drawing.Point(45, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 3;
@@ -73,7 +77,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(253, 181);
+            this.buttonSave.Location = new System.Drawing.Point(231, 248);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(139, 42);
             this.buttonSave.TabIndex = 4;
@@ -83,7 +87,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(409, 180);
+            this.buttonCancel.Location = new System.Drawing.Point(393, 248);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(131, 42);
             this.buttonCancel.TabIndex = 5;
@@ -91,29 +95,47 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // textBoxSum
+            // 
+            this.textBoxSum.Location = new System.Drawing.Point(196, 182);
+            this.textBoxSum.Name = "textBoxSum";
+            this.textBoxSum.Size = new System.Drawing.Size(324, 26);
+            this.textBoxSum.TabIndex = 6;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(97, 129);
+            this.label3.Location = new System.Drawing.Point(45, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Цена:";
+            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Сумма:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(45, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Цена:";
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(196, 129);
+            this.textBoxPrice.Location = new System.Drawing.Point(196, 132);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(323, 26);
-            this.textBoxPrice.TabIndex = 7;
+            this.textBoxPrice.TabIndex = 9;
             // 
             // FormOrderListProductCount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 284);
+            this.ClientSize = new System.Drawing.Size(546, 306);
             this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxSum);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label2);
@@ -136,7 +158,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.TextBox textBoxSum;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxPrice;
     }
 }

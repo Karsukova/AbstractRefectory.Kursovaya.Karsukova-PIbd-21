@@ -13,8 +13,11 @@ namespace AbstractRefectoryModel
         public int Id { get; set; }
         [Required]
         public string ProductName { get; set; }
-        [Required]
+         [Required]
         public decimal Price { get; set; }
+        [Required]
+        public int FreshDate { get; set; }
+        
         [ForeignKey("ProductId")]
         public virtual List<OrderListProduct> OrderListProducts { get; set; }
         [ForeignKey("ProductId")]

@@ -13,8 +13,8 @@ namespace AbstractRefectoryModel
         public int Id { get; set; }
         public int OrderListId { get; set; }
         public string ProductName { get; set; }
-      public decimal Price { get; set; }
-
+       public decimal Price { get; set; }
+        public decimal? Sum { get; set; }
         public int ProductId { get; set; }
         public int Count { get; set; }
         public virtual Product Product { get; set; }

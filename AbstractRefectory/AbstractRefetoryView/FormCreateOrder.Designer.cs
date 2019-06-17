@@ -56,7 +56,7 @@
             // 
             // textBoxSum
             // 
-            this.textBoxSum.Location = new System.Drawing.Point(175, 164);
+            this.textBoxSum.Location = new System.Drawing.Point(175, 147);
             this.textBoxSum.Multiline = true;
             this.textBoxSum.Name = "textBoxSum";
             this.textBoxSum.Size = new System.Drawing.Size(422, 40);

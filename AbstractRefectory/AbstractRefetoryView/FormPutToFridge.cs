@@ -37,19 +37,19 @@ namespace AbstractRefetoryView
                 List<ProductViewModel> listC = serviceC.GetList();
                 if (listC != null)
                 {
-                    comboBoxMaterial.DisplayMember = "ProductName";
-                    comboBoxMaterial.ValueMember = "Id";
-                    comboBoxMaterial.DataSource = listC;
-                    comboBoxMaterial.SelectedItem = null;
+                    comboBoxProduct.DisplayMember = "ProductName";
+                    comboBoxProduct.ValueMember = "Id";
+                    comboBoxProduct.DataSource = listC;
+                    comboBoxProduct.SelectedItem = null;
                 }
                 List<FridgeViewModel> listS = serviceS.GetList();
                 if (listS != null)
                 {
 
-                    comboBoxStorage.DisplayMember = "FridgeName";
-                    comboBoxStorage.ValueMember = "Id";
-                    comboBoxStorage.DataSource = listS;
-                    comboBoxStorage.SelectedItem = null;
+                    comboBoxFridge.DisplayMember = "FridgeName";
+                    comboBoxFridge.ValueMember = "Id";
+                    comboBoxFridge.DataSource = listS;
+                    comboBoxFridge.SelectedItem = null;
                 }
             }
             catch (Exception ex)
@@ -66,13 +66,13 @@ namespace AbstractRefetoryView
                MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (comboBoxMaterial.SelectedValue == null)
+            if (comboBoxProduct.SelectedValue == null)
             {
                 MessageBox.Show("Выберите продукт", "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
                 return;
             }
-            if (comboBoxStorage.SelectedValue == null)
+            if (comboBoxFridge.SelectedValue == null)
             {
                 MessageBox.Show("Выберите холодильник", "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
@@ -82,9 +82,10 @@ namespace AbstractRefetoryView
             {
                 serviceM.PutProductToFridge(new FridgeProductBindingModel
                 {
-                    ProductId = Convert.ToInt32(comboBoxMaterial.SelectedValue),
-                    FridgeId = Convert.ToInt32(comboBoxStorage.SelectedValue),
+                    ProductId = Convert.ToInt32(comboBoxProduct.SelectedValue),
+                    FridgeId = Convert.ToInt32(comboBoxFridge.SelectedValue),
                     Count = Convert.ToInt32(textBoxCount.Text)
+
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,6 +104,7 @@ namespace AbstractRefetoryView
             Close();
         }
 
-        
+       
+
     }
 }
