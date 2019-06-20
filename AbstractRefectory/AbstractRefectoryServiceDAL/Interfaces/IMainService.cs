@@ -15,6 +15,6 @@ namespace AbstractRefectoryServiceDAL.Interfaces
         void CreateOrder(OrderBindingModel model);
         void TakeOrderInWork(OrderBindingModel model);
         void FinishOrder(OrderBindingModel model);
-        void PayOrder(OrderBindingModel model);        void PutProductToFridge(FridgeProductBindingModel model);
+        void PayOrder(OrderBindingModel model);        void PutProductToFridge(FridgeProductBindingModel model);        void UpdateFridge();
     }
 }

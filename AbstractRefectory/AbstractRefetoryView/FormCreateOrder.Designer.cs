@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
-            this.comboBoxZBI = new System.Windows.Forms.ComboBox();
+            this.comboBoxOrderList = new System.Windows.Forms.ComboBox();
             this.textBoxSum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,13 +46,14 @@
             this.comboBoxCustomer.Size = new System.Drawing.Size(425, 28);
             this.comboBoxCustomer.TabIndex = 0;
             // 
-            // comboBoxZBI
+            // comboBoxOrderList
             // 
-            this.comboBoxZBI.FormattingEnabled = true;
-            this.comboBoxZBI.Location = new System.Drawing.Point(172, 93);
-            this.comboBoxZBI.Name = "comboBoxZBI";
-            this.comboBoxZBI.Size = new System.Drawing.Size(424, 28);
-            this.comboBoxZBI.TabIndex = 1;
+            this.comboBoxOrderList.FormattingEnabled = true;
+            this.comboBoxOrderList.Location = new System.Drawing.Point(172, 93);
+            this.comboBoxOrderList.Name = "comboBoxOrderList";
+            this.comboBoxOrderList.Size = new System.Drawing.Size(424, 28);
+            this.comboBoxOrderList.TabIndex = 1;
+            this.comboBoxOrderList.SelectedIndexChanged += new System.EventHandler(this.comboBoxOrderList_SelectedIndexChanged);
             // 
             // textBoxSum
             // 
@@ -120,7 +121,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSum);
-            this.Controls.Add(this.comboBoxZBI);
+            this.Controls.Add(this.comboBoxOrderList);
             this.Controls.Add(this.comboBoxCustomer);
             this.Name = "FormCreateOrder";
             this.Text = "Заказ";
@@ -133,7 +134,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxCustomer;
-        private System.Windows.Forms.ComboBox comboBoxZBI;
+        private System.Windows.Forms.ComboBox comboBoxOrderList;
         private System.Windows.Forms.TextBox textBoxSum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

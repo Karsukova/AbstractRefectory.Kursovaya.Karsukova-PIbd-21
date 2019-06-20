@@ -40,12 +40,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.buttonUpdate);
             this.groupBox1.Controls.Add(this.buttonDelete);
             this.groupBox1.Controls.Add(this.buttonChange);
@@ -60,7 +62,7 @@
             // 
             // buttonUpdate
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(735, 259);
+            this.buttonUpdate.Location = new System.Drawing.Point(736, 243);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(121, 42);
             this.buttonUpdate.TabIndex = 4;
@@ -166,6 +168,16 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(735, 307);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 56);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Загузить из файла";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button button1;
     }
 }

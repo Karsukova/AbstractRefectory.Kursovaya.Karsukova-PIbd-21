@@ -45,10 +45,10 @@ namespace AbstractRefetoryView
                 List<OrderListViewModel> listP = serviceP.GetList();
                 if (listP != null)
                 {
-                    comboBoxZBI.DisplayMember = "OrderListName";
-                    comboBoxZBI.ValueMember = "Id";
-                    comboBoxZBI.DataSource = listP;
-                    comboBoxZBI.SelectedItem = null;
+                    comboBoxOrderList.DisplayMember = "OrderListName";
+                    comboBoxOrderList.ValueMember = "Id";
+                    comboBoxOrderList.DataSource = listP;
+                    comboBoxOrderList.SelectedItem = null;
                 }
             }
             catch (Exception ex)
@@ -67,7 +67,7 @@ namespace AbstractRefetoryView
                MessageBoxIcon.Error);
                 return;
             }
-            if (comboBoxZBI.SelectedValue == null)
+            if (comboBoxOrderList.SelectedValue == null)
             {
                 MessageBox.Show("Выберите изделие", "Ошибка", MessageBoxButtons.OK,
 
@@ -79,9 +79,8 @@ namespace AbstractRefetoryView
                 serviceM.CreateOrder(new OrderBindingModel
                 {
                     AdminId = Convert.ToInt32(comboBoxCustomer.SelectedValue),
-                    OrderListId = Convert.ToInt32(comboBoxZBI.SelectedValue),
-                    //Count = Convert.ToInt32(textBoxCount.Text),
-                    Sum = Convert.ToInt32(textBoxSum.Text)
+                    OrderListId = Convert.ToInt32(comboBoxOrderList.SelectedValue),
+                    Sum = serviceP.GetElement(Convert.ToInt32(comboBoxOrderList.SelectedValue)).Sum
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,5 +99,16 @@ namespace AbstractRefetoryView
             Close();
         }
 
+        private void comboBoxOrderList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxCustomer.SelectedValue != null)
+            {
+                CalcSum();
+            }
+        }
+        private void CalcSum()
+        {
+            textBoxSum.Text = serviceP.GetElement(Convert.ToInt32(comboBoxOrderList.SelectedValue)).Sum.ToString();
+        }
     }
 }

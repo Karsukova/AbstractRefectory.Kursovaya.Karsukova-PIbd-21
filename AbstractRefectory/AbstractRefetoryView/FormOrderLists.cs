@@ -90,5 +90,7 @@ namespace AbstractRefetoryView
         {
             LoadData();
         }
+
+       
     }
 }

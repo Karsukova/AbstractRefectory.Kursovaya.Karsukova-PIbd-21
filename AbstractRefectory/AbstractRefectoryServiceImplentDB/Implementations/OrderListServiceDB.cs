@@ -5,6 +5,8 @@ using AbstractRefectoryModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Word;
 
 namespace DB.Implementations
 {
@@ -59,7 +61,7 @@ namespace DB.Implementations
                         ProductName = recPC.Product.ProductName,
                         Count = recPC.Count,
                         Sum = recPC.Product.Price * recPC.Count,
-                        Price = recPC.Product.Price 
+                        Price = recPC.Product.Price
                     })
                     .ToList()
                 };
@@ -215,6 +217,46 @@ namespace DB.Implementations
                     throw;
                 }
             }
+        }
+
+        public List<OrderListProductBindingModel> ReadExcel(string FileName)
+        {
+            int rows = 0;
+            OrderListBindingModel OL = new OrderListBindingModel();
+            var ObjWorkExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = ObjWorkExcel.Workbooks.Open(FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)ObjWorkBook.Sheets[1];
+            var lastCell = ObjWorkSheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell);
+            string[,] list = new string[lastCell.Column, lastCell.Row];
+            for (int i = 0; i < lastCell.Column; i++)
+                for (int j = 0; j < lastCell.Row; j++)
+                {
+                    list[i, j] = ObjWorkSheet.Cells[j + 1, i + 1].Text.ToString();
+                    rows = j + 1;
+                }
+            ObjWorkBook.Close(false, Type.Missing, Type.Missing);
+            ObjWorkExcel.Quit();
+            GC.Collect();
+
+            List<OrderListProductBindingModel> orderlistProductBM = new
+               List<OrderListProductBindingModel>();
+            for (int i = 0; i < rows; i++)
+            {
+                orderlistProductBM.Add(new OrderListProductBindingModel
+                {
+                    Id = Convert.ToInt32(list[0, i]),
+                    OrderListId = Convert.ToInt32(list[1, i]),
+                    Price = Convert.ToDecimal(list[2, i]),
+                    ProductName = list[3, i].ToString(),
+                    ProductId = Convert.ToInt32(list[4, i]),
+                    Count = Convert.ToInt32(list[5, i]),
+                    Sum = Convert.ToDecimal(list[6, i])
+                });
+
+            }
+            OL.OrderListProducts = orderlistProductBM;
+            return orderlistProductBM;
         }
     }
 }

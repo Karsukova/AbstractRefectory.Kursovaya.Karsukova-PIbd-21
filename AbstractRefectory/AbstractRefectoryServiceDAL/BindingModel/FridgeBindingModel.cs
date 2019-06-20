@@ -10,5 +10,6 @@ namespace AbstractRefectoryServiceDAL.BindingModel
     {
         public int Id { get; set; }
         public string FridgeName { get; set; }
+        public List<FridgeProductBindingModel> FridgeProducts { get; set; }
     }
 }

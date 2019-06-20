@@ -13,5 +13,10 @@ namespace AbstractRefectoryServiceDAL.ViewModel
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int Count { get; set; }
+        public string ReceiptDate { get; set; }
+        public int FreshDate { get; set; }
+        public string DateNotFresh { get; set; }
+        public string FreshStatus { get; set; }
+
     }
 }

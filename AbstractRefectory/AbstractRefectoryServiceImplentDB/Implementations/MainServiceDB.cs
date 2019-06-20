@@ -65,6 +65,7 @@ namespace DB.Implementations
                 {
                     Order element = context.Orders.FirstOrDefault(rec => rec.Id ==
                    model.Id);
+                    element.Count = 1;
                     if (element == null)
                     {
                         throw new Exception("Элемент не найден");
@@ -157,11 +158,49 @@ namespace DB.Implementations
                 {
                     FridgeId = model.FridgeId,
                     ProductId = model.ProductId,
+                    ProductName = model.ProductName,
+                    ReceiptDate =  model.ReceiptDate,
+                    FreshDate = model.FreshDate,
+                    FreshStatus = model.FreshStatus,
+                    DateNotFresh = model.DateNotFresh,
                     Count = model.Count
+                   
                 });
             }
             context.SaveChanges();
         }
+
+
+        public void UpdateFridge()
+        {
+            var fridgeProducts = context.FridgeProducts;
+
+            foreach (var fridgeProduct in fridgeProducts)
+            {
+                FreshStatus freshStatus = CheckStatus(fridgeProduct);
+                fridgeProduct.FreshStatus = freshStatus;
+            }
+
+           
+            context.SaveChanges();
+        }
+
+        public FreshStatus CheckStatus(FridgeProduct element)
+        {
+            TimeSpan span = DateTime.Now - element.ReceiptDate;
+            int relative = span.Days;
+            if (relative <= element.FreshDate / 3)
+            {
+                return FreshStatus.Свежайший;
+            }
+            if (relative <= (element.FreshDate* 2 / 3))
+            {
+                return FreshStatus.Нормальный;
+            }
+           
+                return FreshStatus.Истекает;
+        }
+
     }
 
 }

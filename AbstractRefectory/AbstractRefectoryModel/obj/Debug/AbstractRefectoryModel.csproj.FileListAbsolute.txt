@@ -18,4 +18,7 @@ C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\Abst
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.csproj.CoreCompileInputs.cache
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.dll
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.pdb
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefectoryModel\obj\Debug\AbstractRefectoryModel.csprojResolveAssemblyReference.cache

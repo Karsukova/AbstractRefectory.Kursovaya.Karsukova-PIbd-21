@@ -84,7 +84,13 @@ namespace AbstractRefetoryView
                 {
                     ProductId = Convert.ToInt32(comboBoxProduct.SelectedValue),
                     FridgeId = Convert.ToInt32(comboBoxFridge.SelectedValue),
-                    Count = Convert.ToInt32(textBoxCount.Text)
+                    ProductName = serviceC.GetElement(Convert.ToInt32(comboBoxProduct.SelectedValue)).ProductName,
+                    Count = Convert.ToInt32(textBoxCount.Text),
+                    ReceiptDate = DateTime.Now,
+                    FreshDate = serviceC.GetElement(Convert.ToInt32(comboBoxProduct.SelectedValue)).FreshDate,
+                    DateNotFresh = DateTime.Now.AddDays(serviceC.GetElement
+                    (Convert.ToInt32(comboBoxProduct.SelectedValue)).FreshDate),
+                    FreshStatus = FreshStatus.Свежайший
 
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",

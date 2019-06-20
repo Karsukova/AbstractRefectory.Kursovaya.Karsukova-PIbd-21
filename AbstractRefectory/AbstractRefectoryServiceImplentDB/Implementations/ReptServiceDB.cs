@@ -23,7 +23,7 @@ namespace DB.Implementations
         {
             this.context = context;
         }
-        public void SaveOrderListPrice(ReptBindingModel model)
+        public void SaveProductPrice(ReptBindingModel model)
         {
             if (File.Exists(model.FileName))
             {
@@ -41,7 +41,7 @@ namespace DB.Implementations
                 var paragraph = document.Paragraphs.Add(missing);
                 var range = paragraph.Range;
                 //задаем текст
-                range.Text = "Прайс изделий";
+                range.Text = "Прайс продуктов";
                 //задаем настройки шрифта
                 var font = range.Font;
                 font.Size = 16;
@@ -55,7 +55,7 @@ namespace DB.Implementations
                 paragraphFormat.SpaceBefore = 0;
                 //добавляем абзац в документ
                 range.InsertParagraphAfter();
-                var orderlists = context.OrderLists.ToList();
+                var orderlists = context.Products.ToList();
 
                 //создаем таблицу
                 var paragraphTable = document.Paragraphs.Add(Type.Missing);
@@ -71,8 +71,8 @@ namespace DB.Implementations
                 paragraphTableFormat.SpaceBefore = 0;
                 for (int i = 0; i < orderlists.Count; ++i)
                 {
-                    table.Cell(i + 1, 1).Range.Text = orderlists[i].OrderListName;
-                    table.Cell(i + 1, 2).Range.Text = orderlists[i].Sum.ToString();
+                    table.Cell(i + 1, 1).Range.Text = orderlists[i].ProductName;
+                    table.Cell(i + 1, 2).Range.Text = orderlists[i].Price.ToString();
                 }
                 //задаем границы таблицы
                 table.Borders.InsideLineStyle = WdLineStyle.wdLineStyleInset;
@@ -164,7 +164,7 @@ namespace DB.Implementations
                 excelcells.Merge(Type.Missing);
                 //задаем текст, настройки шрифта и ячейки
                 excelcells.Font.Bold = true;
-                excelcells.Value2 = "Загруженность складов";
+                excelcells.Value2 = "Загруженность холодильников";
                 excelcells.RowHeight = 25;
                 excelcells.HorizontalAlignment =
                Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
@@ -229,7 +229,7 @@ namespace DB.Implementations
                         excelcells.Font.Bold = true;
                     }
                 }
-                //сохраняем
+                
                 excel.Workbooks[1].Save();
             }
             catch (Exception)
@@ -313,7 +313,7 @@ namespace DB.Implementations
             PdfPCell cell = new PdfPCell();
             var fontForCellBold = new iTextSharp.text.Font(baseFont, 10,
            iTextSharp.text.Font.BOLD);
-            table.AddCell(new PdfPCell(new Phrase("ФИО клиента", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("ФИО администратора", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
@@ -321,7 +321,7 @@ namespace DB.Implementations
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });
-            table.AddCell(new PdfPCell(new Phrase("Изделие", fontForCellBold))
+            table.AddCell(new PdfPCell(new Phrase("Лист заказа", fontForCellBold))
             {
                 HorizontalAlignment = Element.ALIGN_CENTER
             });

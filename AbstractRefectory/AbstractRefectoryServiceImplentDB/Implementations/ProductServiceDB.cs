@@ -98,24 +98,26 @@ namespace DB.Implementations
             element.ProductName = model.ProductName;
             element.Price = model.Price;
             element.FreshDate = model.FreshDate;
+            //element.FreshStatus = model.FreshStatus;
             context.SaveChanges();
         }
 
-       
+
 
         //public string CheckStatus(Product element)
         //{
         //    TimeSpan span = DateTime.Now - element.ReceiptDate;
         //    int relative = span.Days;
-        //    if( relative <= element.FreshDate/3)
+        //    if (relative <= element.FreshDate / 3)
         //    {
         //        return FreshStatus.Свежайший.ToString();
-        //    } else if (relative > element.FreshDate* (2/3))
+        //    }
+        //    else if (relative > element.FreshDate * (2 / 3))
         //    {
         //        return FreshStatus.Истекает.ToString();
-        //    } 
-        //    else 
-        //    return FreshStatus.Нормальный.ToString();
+        //    }
+        //    else
+        //        return FreshStatus.Нормальный.ToString();
         //}
         //public ProductFreshment CheckStatus(ProductBindingModel element)
         //{

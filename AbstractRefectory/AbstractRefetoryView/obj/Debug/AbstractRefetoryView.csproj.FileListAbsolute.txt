@@ -120,3 +120,4 @@ C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\Abst
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefetoryView\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefetoryView\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefetoryView\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Дарья\Documents\AbstractRefectory.Kursovaya.Karsukova-PIbd-21\AbstractRefectory\AbstractRefetoryView\obj\Debug\AbstractRefetoryView.FormAuthorize.resources

@@ -216,6 +216,32 @@ namespace AbstractRefetoryView
             Close();
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                Filter = "xls|*.xls|xlsx|*.xlsx"
+            };
+            var filePath = string.Empty;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                filePath = ofd.FileName;
+            }
+            List<OrderListProductBindingModel> OLP = service.ReadExcel(filePath);
+           for (int i = 0; i < OLP.Count; i++)
+            {
+                orderlistProducts.Add(new OrderListProductViewModel
+                {
+                    ProductId = OLP[i].ProductId,
+                    ProductName = OLP[i].ProductName,
+                    Price = OLP[i].Price,
+                    Count = OLP[i].Count,
+                    Sum = OLP[i].Sum
+                });
+            }
+            LoadData();
+            CalcSum();
+           
+        }
     }
 }

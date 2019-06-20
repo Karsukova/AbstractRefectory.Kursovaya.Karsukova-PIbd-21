@@ -15,5 +15,6 @@ namespace AbstractRefectoryServiceDAL.Interfaces
         void AddElement(OrderListBindingModel model);
         void UpdElement(OrderListBindingModel model);
         void DelElement(int id);
+        List<OrderListProductBindingModel> ReadExcel(string FileName);
     }
 }

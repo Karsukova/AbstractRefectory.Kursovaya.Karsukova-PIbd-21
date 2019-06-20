@@ -9,7 +9,7 @@ namespace AbstractRefectoryServiceDAL.Interfaces
 {
     public interface IReptService
     {
-        void SaveOrderListPrice(ReptBindingModel model);
+        void SaveProductPrice(ReptBindingModel model);
         List<FridgesLoadViewModel> GetFridgesLoad();
         void SaveFridgesLoad(ReptBindingModel model);
         List<AdminOrdersViewModel> GetAdminOrders(ReptBindingModel model);

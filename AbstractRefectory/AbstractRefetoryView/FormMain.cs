@@ -5,13 +5,9 @@ using AbstractRefectoryServiceDAL.BindingModel;
 using AbstractRefectoryServiceDAL.ViewModel;
 using AbstractRefectoryServiceDAL.Interfaces;
 using AbstractRefectoryModel;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Unity;
@@ -24,11 +20,13 @@ namespace AbstractRefetoryView
         public new IUnityContainer Container { get; set; }
         public readonly IMainService service;
         public readonly IReptService Reptservice;
-        public FormMain(IMainService service, IReptService Reptservice)
+        public readonly IBackupService backupService;
+        public FormMain(IMainService service, IReptService Reptservice, IBackupService backupService)
         {
             InitializeComponent();
             this.service = service;
             this.Reptservice = Reptservice;
+            this.backupService = backupService;
         }
         private void LoadData()
         {
@@ -139,31 +137,31 @@ namespace AbstractRefetoryView
                 }
             }
         }
-        //private void прайсИзделийToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    SaveFileDialog sfd = new SaveFileDialog
-        //    {
-        //        Filter = "doc|*.doc|docx|*.docx"
-        //    };
-        //    if (sfd.ShowDialog() == DialogResult.OK)
-        //    {
-        //        try
-        //        {
-        //            Reptservice.SaveOrderListPrice(new ReptBindingModel
-        //            {
-        //                FileName = sfd.FileName
-        //            });
-        //            MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
-        //            MessageBoxIcon.Information);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
-        //           MessageBoxIcon.Error);
-        //        }
-        //    }
-        //}
-        private void загруженностьСкладовToolStripMenuItem_Click(object sender, EventArgs
+        private void прайсИзделийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "doc|*.doc|docx|*.docx"
+            };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Reptservice.SaveProductPrice(new ReptBindingModel
+                    {
+                        FileName = sfd.FileName
+                    });
+                    MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void загруженностьХолодильниковToolStripMenuItem_Click(object sender, EventArgs
        e)
         {
             var form = Container.Resolve<FormFridgesLoad>();
@@ -179,6 +177,12 @@ namespace AbstractRefetoryView
         private void buttonRef_Click(object sender, EventArgs e)
         {
             LoadData();
+            service.UpdateFridge();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            backupService.BackUp();
         }
 
         

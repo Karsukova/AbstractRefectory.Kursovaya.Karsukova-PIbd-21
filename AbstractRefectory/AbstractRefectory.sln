@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractRefectoryModel", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractRefectoryServiceDAL", "AbstractRefectoryServiceDAL\AbstractRefectoryServiceDAL.csproj", "{0A8FF578-7B86-4CBF-AF20-612B0DD11474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractRefectoryImplementList", "AbstractRefectoryImplementList\AbstractRefectoryImplementList.csproj", "{067B679B-FAD2-44B9-A826-7064BC413814}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractRefetoryView", "AbstractRefetoryView\AbstractRefetoryView.csproj", "{6705059A-CB64-408C-8D9C-6057DA137134}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "AbstractRefectoryServiceImplentDB\DB.csproj", "{D78939E6-DD60-4E5B-872F-D56C4C1584D2}"
@@ -27,10 +25,6 @@ Global
 		{0A8FF578-7B86-4CBF-AF20-612B0DD11474}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8FF578-7B86-4CBF-AF20-612B0DD11474}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8FF578-7B86-4CBF-AF20-612B0DD11474}.Release|Any CPU.Build.0 = Release|Any CPU
-		{067B679B-FAD2-44B9-A826-7064BC413814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{067B679B-FAD2-44B9-A826-7064BC413814}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{067B679B-FAD2-44B9-A826-7064BC413814}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{067B679B-FAD2-44B9-A826-7064BC413814}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6705059A-CB64-408C-8D9C-6057DA137134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6705059A-CB64-408C-8D9C-6057DA137134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6705059A-CB64-408C-8D9C-6057DA137134}.Release|Any CPU.ActiveCfg = Release|Any CPU

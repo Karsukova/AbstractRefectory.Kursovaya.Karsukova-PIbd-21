@@ -66,7 +66,7 @@ namespace AbstractRefetoryView
             }
             if (comboBoxProduct.SelectedValue == null)
             {
-                MessageBox.Show("Выберите материал", "Ошибка", MessageBoxButtons.OK,
+                MessageBox.Show("Выберите продукт", "Ошибка", MessageBoxButtons.OK,
                MessageBoxIcon.Error);
                 return;
             }

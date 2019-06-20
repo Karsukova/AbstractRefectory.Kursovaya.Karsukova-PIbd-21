@@ -23,7 +23,7 @@ namespace AbstractRefetoryView
             var container = BuildUnityContainer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<FormMain>());
+            Application.Run(container.Resolve<FormAuthorize>());
         }
         public static IUnityContainer BuildUnityContainer()
         {
@@ -42,6 +42,8 @@ namespace AbstractRefetoryView
           HierarchicalLifetimeManager());
             currentContainer.RegisterType<IReptService, ReptServiceDB>(new
                       HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IBackupService, BackUpServiceDB>(new 
+                HierarchicalLifetimeManager());
             return currentContainer;
         }
     }
